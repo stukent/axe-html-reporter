@@ -1,7 +1,7 @@
+import { Result } from 'axe-core';
+import { PreparedResults } from '../index';
 import { AxeReport, FixSummary, Summary } from './AxeReport';
 import { getWcagReference } from './getWcagReference';
-import { PreparedResults } from '../index';
-import { Result } from 'axe-core';
 
 function simplifyAxeResultForSummary(results: Result[]): Summary[] {
     return results.map(({ nodes, description, help, id, tags, impact }, resultIndex) => ({
@@ -75,7 +75,7 @@ export function prepareReportData({
                 description,
                 help,
                 helpUrl,
-                nodes: nodes.map(({ target, html, failureSummary, any }, nodeIndex) => {
+                nodes: nodes.map(({ target, html, failureSummary, any, screenshotPath }, nodeIndex) => {
                     const targetNodes = target.join('\n');
                     const defaultHighlight = {
                         highlight: 'Recommendation with the fix was not provided by axe result',
@@ -97,6 +97,7 @@ export function prepareReportData({
                     return {
                         targetNodes,
                         html,
+                        screenshot: screenshotPath,
                         fixSummaries,
                         relatedNodesAny,
                         index: nodeIndex + 1,

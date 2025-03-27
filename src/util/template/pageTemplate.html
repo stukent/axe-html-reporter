@@ -189,6 +189,10 @@
                                         <pre><code class="css text-wrap">{{targetNodes}}</code></pre>
                                         <p><strong>Element source</strong></p>
                                         <pre><code class="html text-wrap">{{html}}</code></pre>
+                                        {{#screenshot}}
+                                        <p><strong>Element screenshot</strong></p>
+                                        <img src="{{screenshot}}" alt="Element Screenshot" />
+                                        {{/screenshot}}
                                     </td>
                                     <td>
                                         {{#fixSummaries}}

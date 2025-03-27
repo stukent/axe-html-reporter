@@ -99,6 +99,7 @@ declare module 'axe-core' {
         any: CheckResult[];
         all: CheckResult[];
         none: CheckResult[];
+        screenshotPath?: string;
         failureSummary?: string;
         element?: HTMLElement;
     }

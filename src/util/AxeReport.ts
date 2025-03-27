@@ -15,6 +15,7 @@ export interface FixSummary {
 interface NodeResult {
     html: string;
     targetNodes: string;
+    screenshotPath?: string;
     fixSummaries: FixSummary[];
     index: number;
     relatedNodesAny: string[]
